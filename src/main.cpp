@@ -2,22 +2,19 @@
 using namespace sf;
 int main() {
   RenderWindow window(VideoMode(640, 480), "Landscape");
-  // земля
+  
   RectangleShape ground(Vector2f(640, 250));
   ground.setFillColor(Color::Yellow);
   ground.setPosition(0, 350);
 
-  // солнце
   CircleShape sun(40);
   sun.setFillColor(Color(217, 55, 26));
   sun.setPosition(50, 30);
 
-  // гора
   CircleShape mountain(200, 3);
   mountain.setFillColor(Color(214, 128, 58));
   mountain.setPosition(350, 50);
 
-  // кактус из 4-х частей
   RectangleShape cactusBody(Vector2f(40, 250));
   cactusBody.setFillColor(Color::Green);
   cactusBody.setPosition(100, 200);
@@ -34,11 +31,9 @@ int main() {
   cactusRightHand.setFillColor(Color::Green);
   cactusRightHand.setPosition(155, 250);
 
-  // скорость и направление солнца
   float speed = 1;
   float direction = 1;
 
-  // загрузка текстуры персонажа
   Image hero_image;
   hero_image.loadFromFile("../images/horse.png");
 
@@ -69,15 +64,15 @@ int main() {
     sun.move(speed * direction, 0);
 
     window.clear(Color(108, 235, 235));
-    window.draw(ground);     // Отрисовываем землю
-    window.draw(sun);        // Отрисовываем солнце
-    window.draw(mountain);   // Отрисовываем гору
-    window.draw(cactusBody); // Отрисовываем кактус
+    window.draw(ground);     
+    window.draw(sun);        
+    window.draw(mountain);   
+    window.draw(cactusBody); 
     window.draw(cactusArms);
     window.draw(cactusLeftHand);
     window.draw(cactusRightHand);
 
-    window.draw(hero_sprite); // отрисовываем персонажа
+    window.draw(hero_sprite); 
 
     window.display();
   }
