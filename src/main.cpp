@@ -2,7 +2,7 @@
 using namespace sf;
 int main() {
   RenderWindow window(VideoMode(640, 480), "Landscape");
-  
+
   RectangleShape ground(Vector2f(640, 250));
   ground.setFillColor(Color::Yellow);
   ground.setPosition(0, 350);
@@ -35,7 +35,7 @@ int main() {
   float direction = 1;
 
   Image hero_image;
-  hero_image.loadFromFile("../images/horse.png");
+  hero_image.loadFromFile("images/horse.png");
 
   Texture hero_texture;
   hero_texture.loadFromImage(hero_image);
